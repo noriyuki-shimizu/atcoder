@@ -28,11 +28,7 @@ public class Main {
                 int k = scan.nextInt();
                 for(int j=0; j<k; j++) {
                     int am = scan.nextInt();
-                    if(a.get(am) == null) {
-                        a.put(am, 1);
-                    } else {
-                        a.put(am, a.get(am) + 1);
-                    }
+                    a.merge(am, 1, Integer::sum);
                 }
             }
 
